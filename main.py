@@ -45,7 +45,7 @@ if action == "encode":
 
 elif action == "decode":
     base = input(Fore.LIGHTWHITE_EX + "What decoding should be used (base64, base32, base16)?: " + Fore.LIGHTBLUE_EX)
-    string = input(Fore.LIGHTWHITE_EX + "Your text to decode: ")
+    string = input(Fore.LIGHTWHITE_EX + "Your text to decode: " + Fore.LIGHTBLUE_EX)
     string_bytes = string.encode("ascii")
 
     if base == "base64":
