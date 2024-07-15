@@ -5,4 +5,6 @@ Vortex is a simple python-based terminal program used to encode or decode with b
 
 Its just one file and you can look at the src in *main.py*.
 
-And you can find a full working .exe <a href="https://github.com/neydex/vortex/releases/">here</a>
+You can find the working .exe <a href="https://github.com/neydex/vortex/releases/">here</a>
+
+Updates coming soon (maybe).
