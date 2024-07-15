@@ -14,7 +14,7 @@ action = input(Fore.LIGHTWHITE_EX + "Do you want to encode or decode?: " + Fore.
 
 
 if action == "encode":
-    base = input(Fore.LIGHTWHITE_EX + "What encoding should be used (base64, base32, base16)?: " + Fore.LIGHTBLUE_EX)
+    base = input(Fore.LIGHTWHITE_EX + "What encoding should be used (base85, base64, base32, base16)?: " + Fore.LIGHTBLUE_EX)
     string = input(Fore.LIGHTWHITE_EX + "Your text to encode: " + Fore.LIGHTBLUE_EX)
     string_bytes = string.encode("ascii")
 
@@ -39,6 +39,14 @@ if action == "encode":
         base16_string = base16_bytes.decode("ascii")
         print("Your encoded text:", Fore.LIGHTBLUE_EX + f"{base16_string}")
         pyperclip.copy(base16_string)
+        print(Fore.RESET + "Copied to clipboard")
+        print("")
+        input("Press enter to close.")
+    elif base == "base85":
+        base85_bytes = base64.b85encode(string_bytes)
+        base85_string = base85_bytes.decode("ascii")
+        print("Your encoded text:", Fore.LIGHTBLUE_EX + f"{base85_string}")
+        pyperclip.copy(base85_string)
         print(Fore.RESET + "Copied to clipboard")
         print("")
         input("Press enter to close.")
@@ -69,6 +77,14 @@ elif action == "decode":
         base16_string = base16_bytes.decode("ascii")
         print("Your decoded text:", Fore.LIGHTBLUE_EX + f"{base16_string}")
         pyperclip.copy(base16_string)
+        print(Fore.RESET + "Copied to clipboard")
+        print("")
+        input("Press enter to close.")
+    elif base == "base85":
+        base85_bytes = base64.b85decode(string_bytes)
+        base85_string = base85_bytes.decode("ascii")
+        print("Your decoded text:", Fore.LIGHTBLUE_EX + f"{base85_string}")
+        pyperclip.copy(base85_string)
         print(Fore.RESET + "Copied to clipboard")
         print("")
         input("Press enter to close.")
